@@ -1,4 +1,5 @@
 ```dataviewjs
+const fs = require('fs')
 let pages = dv.pages('"Rules/Master/Character"');
 // Loop through pages
 for (let p of pages){
@@ -7,6 +8,10 @@ for (let p of pages){
 	}
   // dv.el("h2",p.file.name); // note title
   // dv.paragraph(dv.fileLink(p.file.name,false)) // link to note
-  dv.el("article", await dv.io.load(p.file.path)); // note body
+  f = await dv.io.load(p.file.path);
+  fs.writeFile("Output.md", f, (err) => {
+	  if (err) throw err;
+  });
+  dv.el("article", f)// note body
 }
 ```

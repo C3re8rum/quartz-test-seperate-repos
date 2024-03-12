@@ -16,7 +16,7 @@ def setup_folder():
             continue
 
         if (os.path.isdir(path)):
-            shutil.rmtree()
+            shutil.rmtree(path)
             continue
         os.remove(path)
 
