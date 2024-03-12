@@ -1,5 +1,5 @@
 ```dataviewjs
-let pages = dv.pages('"content/Rules/Master/Character"');
+let pages = dv.pages('"Rules/Master/Character"');
 // Loop through pages
 for (let p of pages){
 	if (p.tags.includes("Rule") != true){
